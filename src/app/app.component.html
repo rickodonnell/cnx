@@ -1,0 +1,11 @@
+<div class="instructions">
+  Choose a puzzle source, and a puzzle number to change puzzles.
+  There is no saving of anything yet.<br/>
+  <input type="radio" id="orig" [(ngModel)]="puzzleSource" (ngModelChange)="updatePuzzleSrc()" value="orig">
+  <label for="orig">Original Puzzles</label><br>
+  <input type="radio" id="nyt" [(ngModel)]="puzzleSource" (ngModelChange)="updatePuzzleSrc()" value="nyt">
+  <label for="nyt">New York Times</label><br>
+  Puzzle number <input type="number" [(ngModel)]="puzzleNumber" min="1" [max]="numPuzzles"> of {{ numPuzzles }}.
+</div>
+
+<cxn-board [puzzleNumber]="puzzleNumber - 1" [puzzleSource]="puzzleSource"></cxn-board>

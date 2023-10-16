@@ -1,0 +1,119 @@
+$level-1-color: #f9df6d;
+$level-2-color: #a0c35a;
+$level-3-color: #b0c4ef;
+$level-4-color: #ba81c5;
+$unselected-color: #efefe6;
+$selected-color: #5a594e;
+
+.board {
+  width: 80%;
+  margin: auto;
+
+  font-family: "Arial Black";
+  font-weight: 700;
+
+  .guessed {
+    .row {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      margin: 4px;
+      padding: 20px 0;
+      border-radius: 6px;
+      .words {
+        font-family: "Arial";
+      }
+    }
+    .level-0 {
+      background-color: $level-1-color;
+    }
+    .level-1 {
+      background-color: $level-2-color;
+    }
+    .level-2 {
+      background-color: $level-3-color;
+    }
+    .level-3 {
+      background-color: $level-4-color;
+    }
+  }
+
+  .unguessed {
+
+    .row {
+      display: flex;
+    }
+
+    .cell {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex: 1 1 auto;
+      background-color: $unselected-color;
+      border-radius: 6px;
+      height: 80px;
+      width: 150px;
+      margin: 4px;
+      cursor: pointer;
+
+      &.selected {
+        background-color: $selected-color;
+        color: white;
+      }
+    }
+  }
+}
+
+.user-message {
+  width: 40%;
+  display: flex;
+  margin: 20px auto;
+  height: 40px;
+  border-radius: 6px;
+  align-items: center;
+  justify-content: center;
+  background-color: $selected-color;
+  color: white;
+  font-family: Arial, serif;
+}
+
+.mistakes {
+  width: 40%;
+  display: flex;
+  margin: 20px auto;
+  height: 40px;
+  border-radius: 6px;
+  align-items: center;
+  justify-content: center;
+  //background-color: $selected-color;
+  //color: white;
+  font-family: Arial, serif;
+}
+
+.buttons {
+  display: flex;
+  width: 80%;
+  margin: 10px auto;
+  align-items: center;
+  justify-content: center;
+
+  button.cxn-btn {
+    padding: 16px 32px;
+    text-align: center;
+    font-size: 16px;
+    cursor: pointer;
+    margin: 4px;
+    border-radius: 16px;
+    border-width: 1px;
+    background-color: white;
+    &.btn-submit {
+      background-color: #008CBA;
+      color: white;
+    }
+    &[disabled] {
+      opacity: 0.5;
+      cursor: not-allowed;
+    }
+  }
+}

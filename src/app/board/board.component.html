@@ -1,0 +1,49 @@
+<div *ngIf="!!currentPuzzle" class="board">
+  <div class="guessed">
+    <div
+      *ngFor="let row of correctGuesses"
+      class="row level-{{ row.level }}">
+      <div class="category">{{ row.commonality }}</div>
+      <div class="words">{{ row.members }}</div>
+    </div>
+  </div>
+
+  <div class="unguessed">
+    <div
+      *ngFor="let row of remainingWords"
+      class="row">
+      <div
+        *ngFor="let cell of row"
+        [ngClass]="{ cell: true, selected: isSelected(cell) }"
+        (click)="onClickCell(cell)">
+        {{ cell }}
+      </div>
+    </div>
+  </div>
+</div>
+
+<div *ngIf="!!messageToUser" class="user-message">{{ messageToUser }}</div>
+
+<div class="mistakes">
+Mistakes: {{ wrongGuesses.length }}
+</div>
+
+<div class="buttons">
+  <button
+    class="cxn-btn"
+    (click)="shuffle()">
+    Shuffle
+  </button>
+  <button
+    [disabled]="selectedCells.length === 0"
+    class="cxn-btn"
+    (click)="deselectAll()">
+    Deselect All
+  </button>
+  <button
+    [disabled]="selectedCells.length !== 4"
+    class="cxn-btn btn-submit"
+    (click)="guessSelected()">
+    Submit
+  </button>
+</div>

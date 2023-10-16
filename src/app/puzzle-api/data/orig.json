@@ -1,0 +1,33 @@
+[
+  {
+    "id": 0,
+    "groups": [
+      {
+        "commonality": "US State Abbreviations",
+        "level": 0,
+        "members": ["OH", "HI", "CO", "ME"]
+      },
+      {
+        "commonality": "Prepositions",
+        "level": 1,
+        "members": ["AS", "BY", "IN", "TO"]
+      },
+      {
+        "commonality": "Members of the Periodic Table",
+        "level": 2,
+        "members": ["HE", "BE", "AT", "LA"]
+      },
+      {
+        "commonality": "Halves of 4-letter words that are doubled",
+        "level": 3,
+        "members": ["DO", "MA", "PA", "YO"]
+      }
+    ],
+    "startingGroups": [
+      ["AS", "AT", "BE", "BY"],
+      ["CO", "DO", "HE", "HI"],
+      ["IN", "LA", "MA", "ME"],
+      ["OH", "PA", "TO", "YO"]
+    ]
+  }
+]
